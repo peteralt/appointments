@@ -25,10 +25,28 @@ extension Appointment.Status {
             return Image(systemName: "circle.fill")
         }
     }
+    
+    var actionTitle: String? {
+        switch self {
+        case .responseRequired:
+            return "Request to book"
+        case .readyToJoin:
+            return "Starting soon"
+        default:
+            return nil
+        }
+    }
 }
 
 struct AppointmentDetailView: View {
     let store: StoreOf<AppointmentDetailFeature>
+    
+    static var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return formatter
+    }
     
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
@@ -56,8 +74,8 @@ struct AppointmentDetailView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        if !viewStore.displayInitials {
-                            Text("Status")
+                        if let actionTitle = viewStore.appointment.status.actionTitle {
+                            Text(actionTitle)
                                 .foregroundColor(viewStore.appointment.status.color)
                                 .font(.caption2)
                         }
@@ -65,7 +83,7 @@ struct AppointmentDetailView: View {
                             .font(.subheadline)
                             .fontWeight(.medium)
                         
-                        Text("Message frg erogijmert gtiomgiopt mhthio khoy vr gre get gt gt tr")
+                        Text(viewStore.appointment.lastMessage ?? "??")
                             .font(.caption)
                         
                         HStack {
@@ -98,9 +116,10 @@ struct AppointmentDetailView: View {
                     
                     Spacer()
                     
-                    Text("Time")
+                    Text(Self.dateFormatter.string(from: viewStore.appointment.startTime))
                         .font(.caption)
                         .fontWeight(.medium)
+                        .fixedSize()
                 }
                 .padding(.leading, 17)
                 .padding(.trailing, 24)
@@ -118,7 +137,9 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                     appointment: .init(
                         id: "1",
                         user: .init(id: 1, firstName: "Peter", lastName: "Alt"),
-                        status: .responseRequired
+                        status: .responseRequired,
+                        startTime: .now,
+                        endTime: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()
@@ -132,7 +153,9 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                     appointment: .init(
                         id: "2",
                         user: .init(id: 2, firstName: "Peter", lastName: "Alt"),
-                        status: .readyToJoin
+                        status: .readyToJoin,
+                        startTime: .now,
+                        endTime: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()
@@ -146,7 +169,10 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                     appointment: .init(
                         id: "3",
                         user: .init(id: 3, firstName: "Peter", lastName: "Alt"),
-                        status: .active
+                        status: .active,
+                        lastMessage: "What do you think about this?",
+                        startTime: .now,
+                        endTime: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()
@@ -160,7 +186,10 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                     appointment: .init(
                         id: "4",
                         user: .init(id: 4, firstName: "Peter", lastName: "Alt"),
-                        status: .completed
+                        status: .completed,
+                        lastMessage: "Thank you",
+                        startTime: .now,
+                        endTime: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()

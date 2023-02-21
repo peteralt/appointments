@@ -13,7 +13,9 @@ extension AppointmentListFeature.State {
                             firstName: "Peter",
                             lastName: "Alt"
                         ),
-                        status: .readyToJoin
+                        status: .readyToJoin,
+                        startTime: .now,
+                        endTime: .distantPast
                     )
                 ),
                 
@@ -25,7 +27,9 @@ extension AppointmentListFeature.State {
                                 firstName: "Peter",
                                 lastName: "Alt"
                             ),
-                            status: .responseRequired
+                            status: .responseRequired,
+                            startTime: .now,
+                            endTime: .distantPast
                         )
                     ),
                 
@@ -37,7 +41,9 @@ extension AppointmentListFeature.State {
                                 firstName: "Peter",
                                 lastName: "Alt"
                             ),
-                            status: .active
+                            status: .active,
+                            startTime: .now,
+                            endTime: .distantPast
                         )
                     ),
                 
@@ -49,7 +55,9 @@ extension AppointmentListFeature.State {
                                 firstName: "Peter",
                                 lastName: "Alt"
                             ),
-                            status: .completed
+                            status: .completed,
+                            startTime: .now,
+                            endTime: .distantPast
                         )
                     )
             ]
