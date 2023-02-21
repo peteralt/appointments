@@ -61,12 +61,15 @@ struct AppointmentDetailFeature: ReducerProtocol {
             switch action {
                 
             case .didTapAccept:
+                state.appointment.status = .active
                 return .none
                 
             case .didTapDecline:
+                state.appointment.status = .completed
                 return .none
                 
             case .didTapJoinAppointment:
+                // we would do something here, but it's out of scope
                 return .none
             }
         }
@@ -119,19 +122,19 @@ struct AppointmentDetailView: View {
                             case .responseRequired:
                                 ButtonView(
                                     title: "Accept",
-                                    didTap: {},
+                                    didTap: { viewStore.send(.didTapAccept) },
                                     color: viewStore.appointment.status.color
                                 )
                                 ButtonView(
                                     title: "Decline",
-                                    didTap: {},
+                                    didTap: { viewStore.send(.didTapDecline) },
                                     color: Appointment.Status.completed.color
                                 )
                                 
                             case .readyToJoin:
                                 ButtonView(
                                     title: "Join Appointment",
-                                    didTap: {},
+                                    didTap: { viewStore.send(.didTapJoinAppointment) },
                                     color: viewStore.appointment.status.color
                                 )
                                 

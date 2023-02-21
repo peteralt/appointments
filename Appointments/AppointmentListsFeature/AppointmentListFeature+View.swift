@@ -38,13 +38,18 @@ struct AppointmentListFeature: ReducerProtocol {
                 state.appointments = .init(uniqueElements: appointments)
                 return .none
                 
-            case let .appointments(.failure(error)):
+            case .appointments(.failure):
+                // We're not handling any errors right now, we could capture
+                // the error here and display an error message in the future.
                 state.isLoading = false
                 return .none
-                
+                                
             case .appointment:
                 return .none
             }
+        }
+        .forEach(\.appointments, action: /Action.appointment(id:action:)) {
+            AppointmentDetailFeature()
         }
     }
 }
@@ -67,7 +72,7 @@ struct AppointmentsListView: View {
             }
             .overlay {
                 if viewStore.isLoading {
-                    Text("loading")
+                    ProgressView()
                 }
             }
             .onAppear {
