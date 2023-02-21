@@ -46,25 +46,54 @@ struct AppointmentsApp: App {
     @Environment(\.scenePhase)
     private var scenePhase
     
+    @State var selectedTab: Int = 1
+    
     var body: some Scene {
         WindowGroup {
             if !_XCTIsTesting {
-                WithViewStore(store, observe: { $0 }) { viewStore in
-                    AppointmentsListView(
-                        store: store.scope(
-                            state: \.appointments,
-                            action: MainApp.Action.appointments
-                        )
-                    )
-                    .onChange(of: scenePhase) { (newScenePhase) in
-                        let viewStore = ViewStore(store)
-                        switch (scenePhase, newScenePhase) {
-                        case (.inactive, .active):
-                            viewStore.send(.appResumed)
-                        case (.active, .inactive):
-                            viewStore.send(.appBackgrounded)
-                        default:
-                            break
+                NavigationView {
+                    WithViewStore(store, observe: { $0 }) { viewStore in
+                        TabView(selection: $selectedTab) {
+                            Text("RX")
+                                .tabItem {
+                                    Label("", image: "rx")
+                                }
+                                .tag(0)
+                            
+                            AppointmentsListView(
+                                store: store.scope(
+                                    state: \.appointments,
+                                    action: MainApp.Action.appointments
+                                )
+                            )
+                            .tabItem {
+                                Label("", image: "calendar")
+                            }
+                            .tag(1)
+                            
+                            Text("Payments")
+                                .tabItem {
+                                    Label("", image: "payments")
+                                }
+                                .tag(2)
+                            
+                            Text("Performance")
+                                .tabItem {
+                                    Label("", image: "performance")
+                                }
+                                .tag(3)
+                        }
+                        .navigationTitle("Appointments")
+                        .onChange(of: scenePhase) { (newScenePhase) in
+                            let viewStore = ViewStore(store)
+                            switch (scenePhase, newScenePhase) {
+                            case (.inactive, .active):
+                                viewStore.send(.appResumed)
+                            case (.active, .inactive):
+                                viewStore.send(.appBackgrounded)
+                            default:
+                                break
+                            }
                         }
                     }
                 }
