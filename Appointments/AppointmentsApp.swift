@@ -46,6 +46,9 @@ struct AppointmentsApp: App {
     @Environment(\.scenePhase)
     private var scenePhase
     
+    // This is purposefully handled outside of the TCA state, because
+    // none of the other features do any work and it would be
+    // premature optimization to embed it into the state.
     @State var selectedTab: Int = 1
     
     var body: some Scene {

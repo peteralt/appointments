@@ -106,6 +106,7 @@ struct AppointmentDetailView: View {
                                 }
                             }
                     }
+                    .padding(.leading, 12)
                     
                     VStack(alignment: .leading) {
                         if let actionTitle = viewStore.appointment.status.actionTitle {
@@ -155,6 +156,7 @@ struct AppointmentDetailView: View {
                             .font(.caption)
                             .fontWeight(.medium)
                             .fixedSize()
+                            .padding(.trailing, 12)
                     }
                     
                 }

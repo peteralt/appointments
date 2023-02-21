@@ -14,8 +14,7 @@ struct ButtonView: View {
                 .padding(.vertical, 8)
                 .fixedSize()
                 .foregroundColor(Color.white)
-                .font(.caption)
-                .fontWeight(.heavy)
+                .font(.caption.weight(.heavy))
         }
         .background {
             RoundedRectangle(cornerRadius: 100)
