@@ -15,7 +15,8 @@ extension AppointmentListFeature.State {
                         ),
                         status: .readyToJoin,
                         startTime: .now,
-                        endTime: .distantPast
+                        endTime: .distantFuture,
+                        requestedAt: .distantPast
                     )
                 ),
                 
@@ -29,7 +30,8 @@ extension AppointmentListFeature.State {
                             ),
                             status: .responseRequired,
                             startTime: .now,
-                            endTime: .distantPast
+                            endTime: .distantFuture,
+                            requestedAt: .distantPast
                         )
                     ),
                 
@@ -43,7 +45,8 @@ extension AppointmentListFeature.State {
                             ),
                             status: .active,
                             startTime: .now,
-                            endTime: .distantPast
+                            endTime: .distantFuture,
+                            requestedAt: .distantPast
                         )
                     ),
                 
@@ -57,7 +60,8 @@ extension AppointmentListFeature.State {
                             ),
                             status: .completed,
                             startTime: .now,
-                            endTime: .distantPast
+                            endTime: .distantFuture,
+                            requestedAt: .distantPast
                         )
                     )
             ]

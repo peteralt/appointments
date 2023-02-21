@@ -38,10 +38,44 @@ extension Appointment.Status {
     }
 }
 
+extension Appointment {
+    var relativeTime: String {
+        let formatter = RelativeDateTimeFormatter()
+        return formatter.localizedString(for: startTime, relativeTo: .now)
+    }
+    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
+    }
+    
+    var formattedLastMessage: String {
+        switch status {
+        case .responseRequired:
+            return "\(user.firstName) has requested an appointment on \(self.dateFormatter.string(from: startTime))."
+        case .readyToJoin:
+            return "Your appointment with \(user.firstName) begins in \(relativeTime) minutes"
+        default:
+            return lastMessage ?? ""
+        }
+    }
+    
+    var displayedTime: Date? {
+        switch status {
+        case .responseRequired, .readyToJoin:
+            return requestedAt
+        default:
+            return lastMessageAt
+        }
+    }
+}
+
 struct AppointmentDetailView: View {
     let store: StoreOf<AppointmentDetailFeature>
     
-    static var dateFormatter: DateFormatter {
+    static var timeFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .short
@@ -83,7 +117,7 @@ struct AppointmentDetailView: View {
                             .font(.subheadline)
                             .fontWeight(.medium)
                         
-                        Text(viewStore.appointment.lastMessage ?? "??")
+                        Text(viewStore.appointment.formattedLastMessage)
                             .font(.caption)
                         
                         HStack {
@@ -116,10 +150,13 @@ struct AppointmentDetailView: View {
                     
                     Spacer()
                     
-                    Text(Self.dateFormatter.string(from: viewStore.appointment.startTime))
-                        .font(.caption)
-                        .fontWeight(.medium)
-                        .fixedSize()
+                    if let date = viewStore.appointment.displayedTime {
+                        Text(Self.timeFormatter.string(from: date))
+                            .font(.caption)
+                            .fontWeight(.medium)
+                            .fixedSize()
+                    }
+                    
                 }
                 .padding(.leading, 17)
                 .padding(.trailing, 24)
@@ -139,7 +176,8 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                         user: .init(id: 1, firstName: "Peter", lastName: "Alt"),
                         status: .responseRequired,
                         startTime: .now,
-                        endTime: .distantPast
+                        endTime: .distantFuture,
+                        requestedAt: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()
@@ -155,7 +193,8 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                         user: .init(id: 2, firstName: "Peter", lastName: "Alt"),
                         status: .readyToJoin,
                         startTime: .now,
-                        endTime: .distantPast
+                        endTime: .distantFuture,
+                        requestedAt: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()
@@ -172,7 +211,8 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                         status: .active,
                         lastMessage: "What do you think about this?",
                         startTime: .now,
-                        endTime: .distantPast
+                        endTime: .distantFuture,
+                        requestedAt: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()
@@ -189,7 +229,8 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                         status: .completed,
                         lastMessage: "Thank you",
                         startTime: .now,
-                        endTime: .distantPast
+                        endTime: .distantFuture,
+                        requestedAt: .distantPast
                     )
                 ),
                 reducer: AppointmentDetailFeature()

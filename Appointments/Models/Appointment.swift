@@ -7,6 +7,8 @@ struct Appointment: Codable, Equatable, Identifiable {
     var lastMessage: String?
     var startTime: Date
     var endTime: Date
+    var lastMessageAt: Date?
+    var requestedAt: Date
     
     enum Status: String, Codable, Equatable {
         case readyToJoin = "INITIATED"
