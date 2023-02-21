@@ -34,6 +34,7 @@ struct AppointmentListFeature: ReducerProtocol {
                 state.isLoading = false
                 let appointments = response.appointments
                     .map { AppointmentDetailFeature.State(appointment: $0) }
+                    .sorted(by: { $0.appointment.requestedAt > $1.appointment.requestedAt })
                 state.appointments = .init(uniqueElements: appointments)
                 return .none
                 
