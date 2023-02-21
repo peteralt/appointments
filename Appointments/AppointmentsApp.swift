@@ -6,18 +6,18 @@ struct MainApp: ReducerProtocol {
     
     struct State: Equatable {
         /// This holds the state for our AppointmentsList feature.
-        var appointments: AppointmentsListFeature.State = .init()
+        var appointments: AppointmentListFeature.State = .init()
     }
     
     enum Action: Equatable {
         case appResumed
         case appBackgrounded
-        case appointments(AppointmentsListFeature.Action)
+        case appointments(AppointmentListFeature.Action)
     }
     
     var body: some ReducerProtocol<State, Action> {
         Scope(state: \.appointments, action: /Action.appointments) {
-            AppointmentsListFeature()
+            AppointmentListFeature()
         }
         Reduce { state, action in
             switch action {
@@ -32,6 +32,7 @@ struct MainApp: ReducerProtocol {
                 
             }
         }
+        ._printChanges()
     }
 }
 

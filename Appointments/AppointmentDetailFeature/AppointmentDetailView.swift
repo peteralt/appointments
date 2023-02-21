@@ -117,18 +117,23 @@ struct AppointmentDetailView: View {
                         HStack {
                             switch viewStore.appointment.status {
                             case .responseRequired:
-                                Button(action: {}) {
-                                    Text("Accept")
-                                }
-                                
-                                Button(action: {}) {
-                                    Text("Decline")
-                                }
+                                ButtonView(
+                                    title: "Accept",
+                                    didTap: {},
+                                    color: viewStore.appointment.status.color
+                                )
+                                ButtonView(
+                                    title: "Decline",
+                                    didTap: {},
+                                    color: Appointment.Status.completed.color
+                                )
                                 
                             case .readyToJoin:
-                                Button(action: {}) {
-                                    Text("Join Appointment")
-                                }
+                                ButtonView(
+                                    title: "Join Appointment",
+                                    didTap: {},
+                                    color: viewStore.appointment.status.color
+                                )
                                 
                             default:
                                 EmptyView()
@@ -158,7 +163,7 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                 initialState: .init(
                     appointment: .init(
                         id: "1",
-                        user: .init(id: "1", firstName: "Peter", lastName: "Alt"),
+                        user: .init(id: 1, firstName: "Peter", lastName: "Alt"),
                         status: .responseRequired
                     )
                 ),
@@ -172,7 +177,7 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                 initialState: .init(
                     appointment: .init(
                         id: "2",
-                        user: .init(id: "2", firstName: "Peter", lastName: "Alt"),
+                        user: .init(id: 2, firstName: "Peter", lastName: "Alt"),
                         status: .readyToJoin
                     )
                 ),
@@ -186,7 +191,7 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                 initialState: .init(
                     appointment: .init(
                         id: "3",
-                        user: .init(id: "3", firstName: "Peter", lastName: "Alt"),
+                        user: .init(id: 3, firstName: "Peter", lastName: "Alt"),
                         status: .active
                     )
                 ),
@@ -200,7 +205,7 @@ struct AppointmentDetailView_Previews: PreviewProvider {
                 initialState: .init(
                     appointment: .init(
                         id: "4",
-                        user: .init(id: "4", firstName: "Peter", lastName: "Alt"),
+                        user: .init(id: 4, firstName: "Peter", lastName: "Alt"),
                         status: .completed
                     )
                 ),
