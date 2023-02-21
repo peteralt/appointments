@@ -56,7 +56,7 @@ extension Appointment {
         case .responseRequired:
             return "\(user.firstName) has requested an appointment on \(self.dateFormatter.string(from: startTime))."
         case .readyToJoin:
-            return "Your appointment with \(user.firstName) begins in \(relativeTime) minutes"
+            return "Your appointment with \(user.firstName) begins \(relativeTime)"
         default:
             return lastMessage ?? ""
         }
