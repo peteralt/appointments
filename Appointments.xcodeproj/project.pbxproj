@@ -14,6 +14,7 @@
 		8AE8EA4829A527DD00C66676 /* AppointmentListFeature+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4729A527DD00C66676 /* AppointmentListFeature+Mocks.swift */; };
 		8AE8EA4A29A5281E00C66676 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4929A5281E00C66676 /* APIClient.swift */; };
 		8AE8EA4C29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4B29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift */; };
+		8AE8EA4E29A53E8B00C66676 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4D29A53E8B00C66676 /* readme.md */; };
 		8AF4D58C299FE697003E6A09 /* AppointmentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D58B299FE697003E6A09 /* AppointmentsApp.swift */; };
 		8AF4D58E299FE697003E6A09 /* AppointmentListFeature+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D58D299FE697003E6A09 /* AppointmentListFeature+View.swift */; };
 		8AF4D590299FE698003E6A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF4D58F299FE698003E6A09 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		8AE8EA4729A527DD00C66676 /* AppointmentListFeature+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentListFeature+Mocks.swift"; sourceTree = "<group>"; };
 		8AE8EA4929A5281E00C66676 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		8AE8EA4B29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentDetailFeature+Domain.swift"; sourceTree = "<group>"; };
+		8AE8EA4D29A53E8B00C66676 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		8AF4D588299FE697003E6A09 /* Appointments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appointments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF4D58B299FE697003E6A09 /* AppointmentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsApp.swift; sourceTree = "<group>"; };
 		8AF4D58D299FE697003E6A09 /* AppointmentListFeature+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentListFeature+View.swift"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		8AF4D57F299FE697003E6A09 = {
 			isa = PBXGroup;
 			children = (
+				8AE8EA4D29A53E8B00C66676 /* readme.md */,
 				8AF4D58A299FE697003E6A09 /* Appointments */,
 				8AF4D59B299FE698003E6A09 /* AppointmentsTests */,
 				8AF4D5A5299FE698003E6A09 /* AppointmentsUITests */,
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF4D593299FE698003E6A09 /* Preview Assets.xcassets in Resources */,
+				8AE8EA4E29A53E8B00C66676 /* readme.md in Resources */,
 				8AF4D590299FE698003E6A09 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -479,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
