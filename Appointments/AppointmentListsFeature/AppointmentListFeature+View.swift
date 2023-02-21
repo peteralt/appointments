@@ -14,6 +14,8 @@ struct AppointmentsListView: View {
                     )
                 ) {
                     AppointmentDetailView(store: $0)
+                        .padding(.top, 20)
+                        .padding(.bottom, 12)
                 }
                 
             }
