@@ -1,6 +1,6 @@
 # Appointments
 
-A small app, attempting to fulfill requirements based on the (Figma Specs)[https://www.figma.com/file/jcBIaI0nXVD9McL3jALsSg/Conversation-iOS-Take-Home-(iOS-Engineer)?node-id=0%3A1&t=53HeveXxDR1v8rtG-0]
+A small app, attempting to fulfill requirements based on the [Figma Specs](https://www.figma.com/file/jcBIaI0nXVD9McL3jALsSg/Conversation-iOS-Take-Home-(iOS-Engineer)?node-id=0%3A1&t=53HeveXxDR1v8rtG-0)
 
 ## Requirements
 
