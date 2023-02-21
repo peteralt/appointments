@@ -13,6 +13,7 @@
 		8AE8EA4629A527D400C66676 /* AppointmentListFeature+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4529A527D400C66676 /* AppointmentListFeature+Domain.swift */; };
 		8AE8EA4829A527DD00C66676 /* AppointmentListFeature+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4729A527DD00C66676 /* AppointmentListFeature+Mocks.swift */; };
 		8AE8EA4A29A5281E00C66676 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4929A5281E00C66676 /* APIClient.swift */; };
+		8AE8EA4C29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8EA4B29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift */; };
 		8AF4D58C299FE697003E6A09 /* AppointmentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D58B299FE697003E6A09 /* AppointmentsApp.swift */; };
 		8AF4D58E299FE697003E6A09 /* AppointmentListFeature+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D58D299FE697003E6A09 /* AppointmentListFeature+View.swift */; };
 		8AF4D590299FE698003E6A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF4D58F299FE698003E6A09 /* Assets.xcassets */; };
@@ -21,7 +22,7 @@
 		8AF4D5A7299FE698003E6A09 /* AppointmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D5A6299FE698003E6A09 /* AppointmentsUITests.swift */; };
 		8AF4D5A9299FE698003E6A09 /* AppointmentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D5A8299FE698003E6A09 /* AppointmentsUITestsLaunchTests.swift */; };
 		8AF4D5B7299FE71B003E6A09 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF4D5B6299FE71B003E6A09 /* ComposableArchitecture */; };
-		8AF4D5BB299FEC1F003E6A09 /* AppointmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailView.swift */; };
+		8AF4D5BB299FEC1F003E6A09 /* AppointmentDetailFeature+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailFeature+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		8AE8EA4529A527D400C66676 /* AppointmentListFeature+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentListFeature+Domain.swift"; sourceTree = "<group>"; };
 		8AE8EA4729A527DD00C66676 /* AppointmentListFeature+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentListFeature+Mocks.swift"; sourceTree = "<group>"; };
 		8AE8EA4929A5281E00C66676 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		8AE8EA4B29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentDetailFeature+Domain.swift"; sourceTree = "<group>"; };
 		8AF4D588299FE697003E6A09 /* Appointments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appointments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF4D58B299FE697003E6A09 /* AppointmentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsApp.swift; sourceTree = "<group>"; };
 		8AF4D58D299FE697003E6A09 /* AppointmentListFeature+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentListFeature+View.swift"; sourceTree = "<group>"; };
@@ -58,7 +60,7 @@
 		8AF4D5A2299FE698003E6A09 /* AppointmentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppointmentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF4D5A6299FE698003E6A09 /* AppointmentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsUITests.swift; sourceTree = "<group>"; };
 		8AF4D5A8299FE698003E6A09 /* AppointmentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailView.swift; sourceTree = "<group>"; };
+		8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailFeature+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentDetailFeature+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				8AE8EA3B29A5268500C66676 /* Components */,
-				8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailView.swift */,
+				8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailFeature+View.swift */,
+				8AE8EA4B29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift */,
 			);
 			path = AppointmentDetailFeature;
 			sourceTree = "<group>";
@@ -183,19 +186,11 @@
 		8AF4D5B8299FE858003E6A09 /* AppointmentListsFeature */ = {
 			isa = PBXGroup;
 			children = (
-				8AF4D5B9299FEA59003E6A09 /* Components */,
 				8AF4D58D299FE697003E6A09 /* AppointmentListFeature+View.swift */,
 				8AE8EA4529A527D400C66676 /* AppointmentListFeature+Domain.swift */,
 				8AE8EA4729A527DD00C66676 /* AppointmentListFeature+Mocks.swift */,
 			);
 			path = AppointmentListsFeature;
-			sourceTree = "<group>";
-		};
-		8AF4D5B9299FEA59003E6A09 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,10 +334,11 @@
 				8AE8EA4229A5279200C66676 /* User.swift in Sources */,
 				8AE8EA3D29A5269200C66676 /* ButtonView.swift in Sources */,
 				8AE8EA4829A527DD00C66676 /* AppointmentListFeature+Mocks.swift in Sources */,
-				8AF4D5BB299FEC1F003E6A09 /* AppointmentDetailView.swift in Sources */,
+				8AF4D5BB299FEC1F003E6A09 /* AppointmentDetailFeature+View.swift in Sources */,
 				8AE8EA4029A5278100C66676 /* Appointment.swift in Sources */,
 				8AE8EA4629A527D400C66676 /* AppointmentListFeature+Domain.swift in Sources */,
 				8AE8EA4A29A5281E00C66676 /* APIClient.swift in Sources */,
+				8AE8EA4C29A52F6300C66676 /* AppointmentDetailFeature+Domain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
