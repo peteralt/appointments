@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8AF4D58C299FE697003E6A09 /* AppointmentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D58B299FE697003E6A09 /* AppointmentsApp.swift */; };
-		8AF4D58E299FE697003E6A09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D58D299FE697003E6A09 /* ContentView.swift */; };
+		8AF4D58E299FE697003E6A09 /* AppointmentsListFeature+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D58D299FE697003E6A09 /* AppointmentsListFeature+View.swift */; };
 		8AF4D590299FE698003E6A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF4D58F299FE698003E6A09 /* Assets.xcassets */; };
 		8AF4D593299FE698003E6A09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF4D592299FE698003E6A09 /* Preview Assets.xcassets */; };
 		8AF4D59D299FE698003E6A09 /* AppointmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D59C299FE698003E6A09 /* AppointmentsTests.swift */; };
 		8AF4D5A7299FE698003E6A09 /* AppointmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D5A6299FE698003E6A09 /* AppointmentsUITests.swift */; };
 		8AF4D5A9299FE698003E6A09 /* AppointmentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D5A8299FE698003E6A09 /* AppointmentsUITestsLaunchTests.swift */; };
+		8AF4D5B7299FE71B003E6A09 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF4D5B6299FE71B003E6A09 /* ComposableArchitecture */; };
+		8AF4D5BB299FEC1F003E6A09 /* AppointmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		8AF4D588299FE697003E6A09 /* Appointments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appointments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF4D58B299FE697003E6A09 /* AppointmentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsApp.swift; sourceTree = "<group>"; };
-		8AF4D58D299FE697003E6A09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8AF4D58D299FE697003E6A09 /* AppointmentsListFeature+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppointmentsListFeature+View.swift"; sourceTree = "<group>"; };
 		8AF4D58F299FE698003E6A09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AF4D592299FE698003E6A09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AF4D598299FE698003E6A09 /* AppointmentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppointmentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,7 @@
 		8AF4D5A2299FE698003E6A09 /* AppointmentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppointmentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF4D5A6299FE698003E6A09 /* AppointmentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsUITests.swift; sourceTree = "<group>"; };
 		8AF4D5A8299FE698003E6A09 /* AppointmentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF4D5B7299FE71B003E6A09 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +75,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AE8EA3929A5243500C66676 /* AppointmentDetailFeature */ = {
+			isa = PBXGroup;
+			children = (
+				8AF4D5BA299FEC1F003E6A09 /* AppointmentDetailView.swift */,
+			);
+			path = AppointmentDetailFeature;
+			sourceTree = "<group>";
+		};
+		8AE8EA3A29A5246C00C66676 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8AF4D57F299FE697003E6A09 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +113,10 @@
 		8AF4D58A299FE697003E6A09 /* Appointments */ = {
 			isa = PBXGroup;
 			children = (
+				8AE8EA3A29A5246C00C66676 /* Models */,
+				8AE8EA3929A5243500C66676 /* AppointmentDetailFeature */,
+				8AF4D5B8299FE858003E6A09 /* AppointmentListsFeature */,
 				8AF4D58B299FE697003E6A09 /* AppointmentsApp.swift */,
-				8AF4D58D299FE697003E6A09 /* ContentView.swift */,
 				8AF4D58F299FE698003E6A09 /* Assets.xcassets */,
 				8AF4D591299FE698003E6A09 /* Preview Content */,
 			);
@@ -127,6 +148,22 @@
 			path = AppointmentsUITests;
 			sourceTree = "<group>";
 		};
+		8AF4D5B8299FE858003E6A09 /* AppointmentListsFeature */ = {
+			isa = PBXGroup;
+			children = (
+				8AF4D5B9299FEA59003E6A09 /* Components */,
+				8AF4D58D299FE697003E6A09 /* AppointmentsListFeature+View.swift */,
+			);
+			path = AppointmentListsFeature;
+			sourceTree = "<group>";
+		};
+		8AF4D5B9299FEA59003E6A09 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +180,9 @@
 			dependencies = (
 			);
 			name = Appointments;
+			packageProductDependencies = (
+				8AF4D5B6299FE71B003E6A09 /* ComposableArchitecture */,
+			);
 			productName = Appointments;
 			productReference = 8AF4D588299FE697003E6A09 /* Appointments.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 8AF4D57F299FE697003E6A09;
+			packageReferences = (
+				8AF4D5B5299FE71B003E6A09 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 8AF4D589299FE697003E6A09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AF4D58E299FE697003E6A09 /* ContentView.swift in Sources */,
+				8AF4D58E299FE697003E6A09 /* AppointmentsListFeature+View.swift in Sources */,
 				8AF4D58C299FE697003E6A09 /* AppointmentsApp.swift in Sources */,
+				8AF4D5BB299FEC1F003E6A09 /* AppointmentDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8AF4D5B5299FE71B003E6A09 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8AF4D5B6299FE71B003E6A09 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF4D5B5299FE71B003E6A09 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8AF4D580299FE697003E6A09 /* Project object */;
 }
